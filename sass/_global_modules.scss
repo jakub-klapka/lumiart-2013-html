@@ -1,0 +1,397 @@
+/*
+Global modules
+*/
+
+/*
+<i class="icon"> for icons :)
+ */
+.icon {
+	display: inline;
+
+	&:after {
+		font-family: 'iconfont';
+		speak: none;
+		font-style: normal;
+		font-weight: normal;
+		font-variant: normal;
+		text-transform: none;
+		line-height: 1;
+		/* Better Font Rendering =========== */
+		-webkit-font-smoothing: antialiased;
+		-moz-osx-font-smoothing: grayscale;
+	}
+}
+
+/*
+For wraps to center inside
+*/
+.center_inside {
+	text-align: center;
+}
+
+/*
+Main box style - positioning, border on top and bottom and also nonsemantic stuff like tags and corners
+*/
+.lumi_box {
+	position: relative;
+	margin-bottom: 30px;
+	border-bottom: $lumi_box_border_width solid $lumi_box_border_color;
+	border-top: $lumi_box_border_width solid $lumi_box_border_color;
+	padding: $lumi_box_top_bottom_gutter 0;
+
+	%corners_common {
+		position: absolute;
+		width: 10px;
+		top: -$lumi_box_border_width;
+		bottom: -$lumi_box_border_width;
+
+		&:before,
+		&:after {
+			position: absolute;
+			content: '';
+			border-color: $lumi_box_border_color;
+			border-width: $lumi_box_border_width;
+			width: 10px;
+			height: 10px;
+		}
+	}
+
+	.left_corners {
+		@extend %corners_common;
+		left: -$lumi_box_margin_from_content;
+
+		&:before {
+			//left top corner
+			left: 0;
+			top: 0;
+			border-style: solid none none solid;
+		}
+
+		&:after {
+			//left bottom corner
+			left: 0;
+			bottom: 0;
+			border-style: none none solid solid;
+		}
+	}
+
+	.right_corners {
+		@extend %corners_common;
+
+		right: -$lumi_box_margin_from_content;
+
+		&:before {
+			//right top corner
+			left: 0;
+			top: 0;
+			border-style: solid solid none none;
+		}
+
+		&:after {
+			//right bottom corner
+			left: 0;
+			bottom: 0;
+			border-style: none solid solid none;
+		}
+	}
+
+	%tags_common {
+		position: absolute;
+		text-transform: uppercase;
+		font: {
+			family: tags_font;
+			size: 12px;
+		}
+		color: rgba(255,255,255,0.25);
+
+		&:after {
+			content: '>';
+		}
+	}
+
+	.top_tag {
+		@extend %tags_common;
+		left: 0;
+		top: 15px;
+
+		&:before {
+			content: '<';
+		}
+	}
+
+	.bottom_tag {
+		@extend %tags_common;
+		right: 0;
+		bottom: 15px;
+
+		&:before {
+			content: '</';
+		}
+	}
+}
+
+
+/*
+Just quickie to absolute position with all attr 0
+*/
+%absolute_fill_whole_parent {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+}
+
+
+/*
+Style button-like things - add weird shaped borders and hover animations
+*/
+//common style used below for pseudoelements
+%button_with_sides_before_after_common {
+	content: '';
+	position: absolute;
+	display: block;
+	width: 10px;
+	top: 0;
+	bottom: 0;
+	border-color: #FFF;
+	border-width: 1px;
+	transition-property: width, border-color, text-shadow, box-shadow;
+	transition-duration: $buttons_transition_duration;
+	box-sizing: border-box;
+}
+
+%button_with_sides_glow_common {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	width: 1px;
+	box-shadow: 0 0 15px 1px rgba(255,255,255,0.5);
+	transition: box-shadow $buttons_transition_duration;
+}
+
+.button {
+	display: inline-block;
+	padding: 13px 10px;
+	text-align: center;
+	text-decoration: none;
+	color: #FFF;
+	text-transform: uppercase;
+	position: relative;
+	text-shadow: $glow_text_shadow;
+	transition-property: color, text-shadow;
+	transition-duration: $buttons_transition_duration;
+	font-family: Electrolize;
+	font-size: 14px;
+
+	&:before {
+		@extend %button_with_sides_before_after_common;
+		left: 0;
+		border-style: none none solid solid;
+	}
+
+	&:after {
+		@extend %button_with_sides_before_after_common;
+		right: 0;
+		border-style: solid solid none none;
+	}
+
+	.left_glow {
+		@extend %button_with_sides_glow_common;
+		left: 0;
+	}
+
+	.right_glow {
+		@extend %button_with_sides_glow_common;
+		right: 0;
+	}
+
+	&:hover .left_glow,
+	&:active .left_glow,
+	&.active .left_glow,
+	&:hover .right_glow,
+	&:active .right_glow,
+	&.active .right_glow
+	{
+		box-shadow: none;
+	}
+
+	&:hover:before {
+		width: 100%;
+		border-color: $main_hover_color;
+	}
+
+	&:hover:after {
+		width: 100%;
+		border-color: $main_hover_color;
+	}
+
+	&:active,
+	&.active {
+		color: $main_hover_color;
+		//text-shadow: $glow_text_shadow_active;
+		text-shadow: none;
+
+		&:before {
+			width: 100%;
+			border-color: $main_hover_color;
+			box-shadow: none;
+		}
+
+		&:after {
+			width: 100%;
+			border-color: $main_hover_color;
+			box-shadow: none;
+		}
+	}
+
+	&:focus {
+		outline: none;
+	}
+}
+
+/*
+Image with cuted corners
+*/
+.image_corners {
+	display: inline-block;
+	overflow: hidden;
+	position: relative;
+	max-width: 100%;
+
+	//19:12 default
+	$scale_multiplier: 1.62; //smaller multiplier -> biiger corners
+	$shift: 48.7%; //50% -> same corners
+
+	$top_width: 6.3%;
+	$bottom_width: 9%;
+
+	div {
+		transform: rotate(-45deg) scale($scale_multiplier);
+		transform-origin: $shift;
+		overflow: hidden;
+	}
+
+	img,
+	.img {
+		transform-origin: $shift;
+		transform: rotate(45deg) scale(1/$scale_multiplier);
+		display: block;
+		width: 100%;
+	}
+
+	//image in img div - ex. portfolio list, div is begaving like rotated image, img in it is simple img
+	.img img {
+		transform: none;
+		width: auto;
+	}
+
+	&:not(.hover):before,
+	&:not(.hover):after {
+		content: '';
+		display: block;
+		position: absolute;
+		background-size: contain;
+		background-repeat: no-repeat;
+	}
+
+	&:not(.hover):before {
+		background-image: image-url('image_top_corner_blue.svg');
+		width: $top_width;
+		height: 100%;
+		left: 0;
+		top: 0;
+	}
+
+	&:not(.hover):after {
+		background-image: image-url('image_bottom_corner_blue.svg');
+		background-position: left bottom;
+		width: $bottom_width;
+		height: 100%;
+		right: 0;
+		bottom: 0;
+	}
+
+
+	/*
+	Hover images - red
+	*/
+	&.hover {
+
+		svg {
+			.st0{fill-rule:evenodd;clip-rule:evenodd;fill:#FFFFFF;transition: fill 300ms;}
+			.st1{fill-rule:evenodd;clip-rule:evenodd;fill:$main_hover_color;}
+		}
+
+		.svg_corner_top {
+			position: absolute;
+			left: 0;
+			top: 0;
+			width: $top_width;
+			height: ( ( $top_width * 19 ) / 12 );
+		}
+
+		.svg_corner_bottom {
+			position: absolute;
+			right: 0;
+			bottom: 0;
+			width: $bottom_width;
+			height: ( ( $bottom_width * 19 ) / 12 );
+		}
+
+		&:hover {
+			svg {
+				.st0{fill:$main_hover_color;}
+			}
+		}
+
+	}
+
+	/*
+	Orange version
+	*/
+	&.orange {
+		&:not(.hover):before {
+			background-image: image-url('image_top_corner_orange.svg');
+		}
+
+		&:not(.hover):after {
+			background-image: image-url('image_bottom_corner_orange.svg');
+		}
+	}
+
+
+	&.ratio_19_8 {
+		/*
+		19:8 ratio
+		*/
+		$scale_multiplier: 2.07; //smaller multiplier -> biiger corners
+
+		div {
+			transform: rotate(-45deg) scale($scale_multiplier);
+		}
+
+		img,
+		.img {
+			transform: rotate(45deg) scale(1/$scale_multiplier);
+		}
+
+		.img img {
+			transform: none;
+		}
+
+		/*
+		Hover images - red
+		*/
+		&.hover {
+
+			.svg_corner_top {
+				height: ( ( $top_width * 19 ) / 8 ); //ratio
+			}
+
+			.svg_corner_bottom {
+				height: ( ( $bottom_width * 19 ) / 8 ); //ratio
+			}
+		}
+	}
+}

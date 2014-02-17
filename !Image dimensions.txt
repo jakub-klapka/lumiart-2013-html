@@ -1,0 +1,82 @@
+SUMMARY FOR UPLOADING:
+
+	Portfolio:
+		Preview images: 722x456px
+		Logo Thumbnails: 104px height, variable width (max. 417px)
+
+	Projects:
+		Preview image: 722x456
+		Logo Thumbnails: 104px height, variable width (max. 417px)
+
+	Team:
+		Person Images: 722x456px
+
+	Home:
+		Heading image: 722x456px
+		Testimonials: 722x304px
+
+
+
+// all sizes based on viewport -> x2 for retina
+
+
+CODE IMAGE SIZES (for different devices): (based on ratio without rounding)
+	Portfolio:
+		Preview images:
+			Desktop: 456x288
+			Tablet: 608x384
+			Mobile: 722x456
+		Thumbnail logos:
+            mobile: 104h (max. 417w)
+            tablet: 44h (max. 176w)
+            desktop: 68h (max. 272w)
+	Projetcts:
+		Thumbnail logo same as protfolio
+		Preview image:
+			Desktop: 475x300
+			Tablet: 608x384
+			Mobile: 722x456
+	Team:
+		Person images:
+			Desktop: 703x444
+			Tablet: 456x288
+			Mobile: 722x456
+	Home:
+		Heading image:
+			Desktop: 456x288
+			Tablet: 475x300
+			Mobile: 722x456
+		Testimonials (19:8 ratio):
+			Desktop: 475x200
+            Tablet: 475x200
+            Mobile: 722x304
+
+
+BASE READINGS (widths):
+	Portfolio:
+		images:
+			desktop - 442px
+			tablet - 607px
+			mobile - 707px
+		thumbnail logos:
+			mobile: 104h (max. 417w)
+			tablet: 44h (max. 176w)
+			desktop: 68h (max. 272w)
+	Projects:
+		image:
+			desktop - 461px
+			tablet - 607px
+			mobile - 707px
+	Team:
+		desktop: 691px
+		tablet: 453px
+		mobile: 707px
+	Home:
+		Heading image:
+			desktop: 444
+			tablet: 465
+			mobile: 707
+		testimonials (19:8 ratio):
+			desktop: 461
+			tablet: 468
+			mobile: 707

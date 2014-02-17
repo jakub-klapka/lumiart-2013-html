@@ -1,0 +1,294 @@
+<!doctype html>
+<html lang="cs-CZ" class="">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<title>Lumiart</title>
+
+	<link rel="stylesheet" href="css/layout.css"/>
+	<link rel="stylesheet" href="css/portfolio.css"/>
+
+	<script type="text/javascript">
+		window.root_url = '';
+	</script>
+
+	<script type="text/javascript" src="js/modernizr.js"></script>
+	<script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
+	<script type="text/javascript" src="js/jquery.mobile.custom.min.js"></script>
+	<script type="text/javascript" src="js/handlebars.runtime.js"></script>
+	<script type="text/javascript" src="js/projects_hb_template.js"></script>
+	<script type="text/javascript" src="js/layout.js"></script>
+	<script type="text/javascript" src="js/portfolio.js"></script>
+
+</head>
+<body>
+
+<div class="page_wrap">
+	<header class="main_header lumi_box" role="banner">
+		<a href="" class="logo"><span>LUMIART</span></a>
+		<button class="open_menu button" aria-controls="menu" aria-hidden="true" role="button" aria-pressed="false">
+			<span>Open menu</span>
+			<i class="icon icon_open_menu"></i>
+			<div class="left_glow"></div><div class="right_glow"></div>
+		</button>
+		<button class="share button" role="button" aria-haspopup="true">
+			<span>Share</span>
+			<i class="icon icon_share"></i>
+			<div class="left_glow"></div><div class="right_glow"></div>
+		</button>
+		<a href="" class="languages button">
+			<span>CZ</span>&nbsp;&nbsp;/&nbsp;&nbsp;<span class="active">EN</span>
+			<div class="left_glow"></div><div class="right_glow"></div>
+		</a>
+		<nav class="main_menu" id="menu">
+			<h3 class="hidden" aria-hidden="false">Menu</h3>
+			<ul role="navigation">
+				<li><a href="" class="button">Menu Button<div class="left_glow"></div><div class="right_glow"></div></a></li>
+				<li><a href="" class="button">Menu Button<div class="left_glow"></div><div class="right_glow"></div></a></li>
+				<li><a href="" class="button">Button<div class="left_glow"></div><div class="right_glow"></div></a></li>
+				<li><a href="" class="button">Longer Menu Button<div class="left_glow"></div><div class="right_glow"></div></a></li>
+				<li><a href="" class="button">Menu Button<div class="left_glow"></div><div class="right_glow"></div></a></li>
+			</ul>
+			<!-- nonsemantic stuff -->
+			<div class="left_corners" aria-hidden="true"></div><div class="right_corners" aria-hidden="true"></div><div class="top_tag" aria-hidden="true">Menu</div><div class="bottom_tag" aria-hidden="true">Menu</div>
+			<!-- /nstuff -->
+		</nav>
+
+		<!-- nonsemantic stuff -->
+		<div class="left_corners" aria-hidden="true"></div><div class="right_corners" aria-hidden="true"></div><div class="top_tag" aria-hidden="true">Header</div><div class="bottom_tag" aria-hidden="true">Header</div>
+		<!-- /nstuff -->
+	</header>
+
+
+
+	<div class="main_content two_thirds" role="main">
+		<article class="lumi_box portfolio_content">
+			<h1 class="hidden">Portfolio</h1>
+
+			<div class="portfolio_client_content" data-hb-template-name="projects_hb_template">
+				<div class="client_heading"><h2 class="same_as_h1">&lt;Project 1&gt;</h2></div>
+
+				<div class="image_corners ratio_19_12 project_image">
+					<div>
+						<img src="http://placehold.it/190x120" alt=""/>
+					</div>
+				</div>
+
+				<p class="project_description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus aut culpa
+					cum delectus dignissimos, distinctio dolor ipsam libero maxime nam nobis non obcaecati perspiciatis,
+					placeat quisquam quo repudiandae soluta tenetur.</p>
+
+				<div class="center_inside client_link"><a class="button" href="">visit www.client.com<div class="left_glow"></div><div class="right_glow"></div></a></div>
+
+				<div class="client_share_buttons">share buttons</div>
+
+			</div>
+
+			<div class="article_active_indicator" aria-hidden="true"></div>
+
+			<!-- nonsemantic stuff -->
+			<div class="left_corners" aria-hidden="true"></div><div class="right_corners" aria-hidden="true"></div><div class="top_tag" aria-hidden="true">Detail</div><div class="bottom_tag" aria-hidden="true">Detail</div>
+			<!-- /nstuff -->
+
+		</article>
+		<aside class="lumi_box">
+
+			<ul class="portfolio_list">
+				<li class="visible active">
+					<a class="image_corners hover ratio_19_8 portfolio_list_image" href="project1.json" data-slug="client-1">
+						<div>
+							<div class="img">
+								<img src="http://placehold.it/100x50" alt=""/>
+							</div>
+						</div>
+						<svg class="svg_corner_top" xmlns="http://www.w3.org/2000/svg" version="1.1" id="blue" x="0" y="0" viewBox="0 0 24 24" xml:space="preserve">
+						  <path class="st0" d="M0 24v-2L22 0h2L0 24z"/>
+						  <path class="st1" d="M7 0L0 7v9L16 0H7zM1 8l7-7h5L1 13V8z"/>
+						</svg>
+						<svg class="svg_corner_bottom" xmlns="http://www.w3.org/2000/svg" version="1.1" id="blue" x="0px" y="0px" width="37px" height="37px" viewBox="0 0 37 37" xml:space="preserve">
+						  <path class="st1" d="M8 37h14l15-15V8L8 37zM36 21L21 36H11l25-25V21z"/>
+						  <path class="st0" d="M37 0v2L2 37H0L37 0z"/>
+						</svg>
+					</a>
+				</li>
+				<li class="visible">
+					<a class="image_corners hover ratio_19_8 portfolio_list_image" href="project2.json" data-slug="client-2">
+						<div>
+							<div class="img">
+								<img src="http://placehold.it/200x50" alt=""/>
+							</div>
+						</div>
+						<svg class="svg_corner_top" xmlns="http://www.w3.org/2000/svg" version="1.1" id="blue" x="0" y="0" viewBox="0 0 24 24" xml:space="preserve">
+						  <path class="st0" d="M0 24v-2L22 0h2L0 24z"/>
+						  <path class="st1" d="M7 0L0 7v9L16 0H7zM1 8l7-7h5L1 13V8z"/>
+						</svg>
+						<svg class="svg_corner_bottom" xmlns="http://www.w3.org/2000/svg" version="1.1" id="blue" x="0px" y="0px" width="37px" height="37px" viewBox="0 0 37 37" xml:space="preserve">
+						  <path class="st1" d="M8 37h14l15-15V8L8 37zM36 21L21 36H11l25-25V21z"/>
+						  <path class="st0" d="M37 0v2L2 37H0L37 0z"/>
+						</svg>
+					</a>
+				</li>
+
+				<li class="visible">
+					<a class="image_corners hover ratio_19_8 portfolio_list_image" href="client3.json" data-slug="client-3">
+						<div>
+							<div class="img">
+								<img src="http://placehold.it/200x50" alt=""/>
+							</div>
+						</div>
+						<svg class="svg_corner_top" xmlns="http://www.w3.org/2000/svg" version="1.1" id="blue" x="0" y="0" viewBox="0 0 24 24" xml:space="preserve">
+						  <path class="st0" d="M0 24v-2L22 0h2L0 24z"/>
+						  <path class="st1" d="M7 0L0 7v9L16 0H7zM1 8l7-7h5L1 13V8z"/>
+						</svg>
+						<svg class="svg_corner_bottom" xmlns="http://www.w3.org/2000/svg" version="1.1" id="blue" x="0px" y="0px" width="37px" height="37px" viewBox="0 0 37 37" xml:space="preserve">
+						  <path class="st1" d="M8 37h14l15-15V8L8 37zM36 21L21 36H11l25-25V21z"/>
+						  <path class="st0" d="M37 0v2L2 37H0L37 0z"/>
+						</svg>
+					</a>
+				</li>
+
+				<li>
+					<a class="image_corners hover ratio_19_8 portfolio_list_image" href="client1.json" data-slug="client-4">
+						<div>
+							<div class="img">
+								<img src="http://placehold.it/200x50" alt=""/>
+							</div>
+						</div>
+						<svg class="svg_corner_top" xmlns="http://www.w3.org/2000/svg" version="1.1" id="blue" x="0" y="0" viewBox="0 0 24 24" xml:space="preserve">
+						  <path class="st0" d="M0 24v-2L22 0h2L0 24z"/>
+						  <path class="st1" d="M7 0L0 7v9L16 0H7zM1 8l7-7h5L1 13V8z"/>
+						</svg>
+						<svg class="svg_corner_bottom" xmlns="http://www.w3.org/2000/svg" version="1.1" id="blue" x="0px" y="0px" width="37px" height="37px" viewBox="0 0 37 37" xml:space="preserve">
+						  <path class="st1" d="M8 37h14l15-15V8L8 37zM36 21L21 36H11l25-25V21z"/>
+						  <path class="st0" d="M37 0v2L2 37H0L37 0z"/>
+						</svg>
+					</a>
+				</li>
+
+				<li>
+					<a class="image_corners hover ratio_19_8 portfolio_list_image" href="client1.json" data-slug="client-5">
+						<div>
+							<div class="img">
+								<img src="http://placehold.it/200x50" alt=""/>
+							</div>
+						</div>
+						<svg class="svg_corner_top" xmlns="http://www.w3.org/2000/svg" version="1.1" id="blue" x="0" y="0" viewBox="0 0 24 24" xml:space="preserve">
+						  <path class="st0" d="M0 24v-2L22 0h2L0 24z"/>
+						  <path class="st1" d="M7 0L0 7v9L16 0H7zM1 8l7-7h5L1 13V8z"/>
+						</svg>
+						<svg class="svg_corner_bottom" xmlns="http://www.w3.org/2000/svg" version="1.1" id="blue" x="0px" y="0px" width="37px" height="37px" viewBox="0 0 37 37" xml:space="preserve">
+						  <path class="st1" d="M8 37h14l15-15V8L8 37zM36 21L21 36H11l25-25V21z"/>
+						  <path class="st0" d="M37 0v2L2 37H0L37 0z"/>
+						</svg>
+					</a>
+				</li>
+
+				<li>
+					<a class="image_corners hover ratio_19_8 portfolio_list_image" href="client1.json" data-slug="client-6">
+						<div>
+							<div class="img">
+								<img src="http://placehold.it/200x50" alt=""/>
+							</div>
+						</div>
+						<svg class="svg_corner_top" xmlns="http://www.w3.org/2000/svg" version="1.1" id="blue" x="0" y="0" viewBox="0 0 24 24" xml:space="preserve">
+						  <path class="st0" d="M0 24v-2L22 0h2L0 24z"/>
+						  <path class="st1" d="M7 0L0 7v9L16 0H7zM1 8l7-7h5L1 13V8z"/>
+						</svg>
+						<svg class="svg_corner_bottom" xmlns="http://www.w3.org/2000/svg" version="1.1" id="blue" x="0px" y="0px" width="37px" height="37px" viewBox="0 0 37 37" xml:space="preserve">
+						  <path class="st1" d="M8 37h14l15-15V8L8 37zM36 21L21 36H11l25-25V21z"/>
+						  <path class="st0" d="M37 0v2L2 37H0L37 0z"/>
+						</svg>
+					</a>
+				</li>
+
+				<li>
+					<a class="image_corners hover ratio_19_8 portfolio_list_image" href="client1.json" data-slug="client-7">
+						<div>
+							<div class="img">
+								<img src="http://placehold.it/200x50" alt=""/>
+							</div>
+						</div>
+						<svg class="svg_corner_top" xmlns="http://www.w3.org/2000/svg" version="1.1" id="blue" x="0" y="0" viewBox="0 0 24 24" xml:space="preserve">
+						  <path class="st0" d="M0 24v-2L22 0h2L0 24z"/>
+						  <path class="st1" d="M7 0L0 7v9L16 0H7zM1 8l7-7h5L1 13V8z"/>
+						</svg>
+						<svg class="svg_corner_bottom" xmlns="http://www.w3.org/2000/svg" version="1.1" id="blue" x="0px" y="0px" width="37px" height="37px" viewBox="0 0 37 37" xml:space="preserve">
+						  <path class="st1" d="M8 37h14l15-15V8L8 37zM36 21L21 36H11l25-25V21z"/>
+						  <path class="st0" d="M37 0v2L2 37H0L37 0z"/>
+						</svg>
+					</a>
+				</li>
+
+				<li>
+					<a class="image_corners hover ratio_19_8 portfolio_list_image" href="client1.json" data-slug="client-8">
+						<div>
+							<div class="img">
+								<img src="http://placehold.it/200x50" alt=""/>
+							</div>
+						</div>
+						<svg class="svg_corner_top" xmlns="http://www.w3.org/2000/svg" version="1.1" id="blue" x="0" y="0" viewBox="0 0 24 24" xml:space="preserve">
+						  <path class="st0" d="M0 24v-2L22 0h2L0 24z"/>
+						  <path class="st1" d="M7 0L0 7v9L16 0H7zM1 8l7-7h5L1 13V8z"/>
+						</svg>
+						<svg class="svg_corner_bottom" xmlns="http://www.w3.org/2000/svg" version="1.1" id="blue" x="0px" y="0px" width="37px" height="37px" viewBox="0 0 37 37" xml:space="preserve">
+						  <path class="st1" d="M8 37h14l15-15V8L8 37zM36 21L21 36H11l25-25V21z"/>
+						  <path class="st0" d="M37 0v2L2 37H0L37 0z"/>
+						</svg>
+					</a>
+				</li>
+
+
+
+			</ul>
+
+			<div class="portfolio_list_pagination">
+				<button class="button prev">&lt;<div class="left_glow"></div><div class="right_glow"></div></button>
+				<button class="page active"></button>
+				<button class="page"></button>
+				<button class="page"></button>
+				<button class="button next">&gt;<div class="left_glow"></div><div class="right_glow"></div></button>
+			</div>
+
+			<div class="portfolio_list_indicator"><div class="connect_link"></div></div>
+
+			<!-- nonsemantic stuff -->
+			<div class="left_corners" aria-hidden="true"></div><div class="right_corners" aria-hidden="true"></div><div class="top_tag" aria-hidden="true">Back to portfolio</div><div class="bottom_tag" aria-hidden="true">Back to portfolio</div>
+			<!-- /nstuff -->
+
+		</aside>
+	</div>
+
+
+
+
+	<footer class="main_footer lumi_box" role="contentinfo">
+		<div class="copyright">&copy;2013 Lumiart.cz</div>
+		<div class="buttons">
+			<a class="button facebook" href="">
+				<span>Social button</span>
+				<i class="icon icon_facebook"></i>
+				<div class="left_glow"></div><div class="right_glow"></div>
+			</a>
+			<a class="button twitter" href="">
+				<span>Social button</span>
+				<i class="icon icon_twitter"></i>
+				<div class="left_glow"></div><div class="right_glow"></div>
+			</a>
+			<button class="button back_to_top" role="button">
+				<span>Back to top</span>
+				<i class="icon icon_back_to_top"></i>
+				<div class="left_glow"></div><div class="right_glow"></div>
+			</button>
+		</div>
+
+		<!-- nonsemantic stuff -->
+		<div class="left_corners" aria-hidden="true"></div><div class="right_corners" aria-hidden="true"></div><div class="top_tag" aria-hidden="true">Footer</div><div class="bottom_tag" aria-hidden="true">Footer</div>
+		<!-- /nstuff -->
+	</footer>
+
+</div>
+
+
+</body>
+</html>

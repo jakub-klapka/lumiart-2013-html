@@ -1,0 +1,242 @@
+@import "global";
+
+/*
+Client page
+*/
+.client_heading {
+	text-align: center;
+
+	h2 {
+		margin-top: 0;
+		margin-bottom: 30px;
+	}
+}
+
+.center_inside {
+	clear: both;
+}
+
+ul.client_detail_images {
+	display: block;
+	list-style: none;
+	padding: 0;
+
+	li {
+		display: block;
+		margin-bottom: 60px;
+
+		&:before,
+		&:after {
+			display: none;
+		}
+
+		.image_corners {
+			width: 100%;
+			display: block;
+		}
+	}
+}
+
+/* addthis customize */
+.client_share_buttons {
+	margin-top: 30px;
+	text-align: center;
+	clear: both;
+
+	a {
+		display: inline-block;
+		box-sizing: content-box;
+		float: none !important;
+		vertical-align: top;
+	}
+}
+
+
+@media only screen and ( min-width: ( $responsive_second_breakpoint + 1px ) ) {
+
+	ul.client_detail_images {
+
+		li {
+			$margin_between_images: 4%;
+			width: 50% - ( $margin_between_images / 2 );
+			float: left;
+			margin-bottom: $margin_between_images;
+
+			&:nth-of-type(2n-1) {
+				margin-right: $margin_between_images;
+			}
+		}
+	}
+
+}
+
+.client_link {
+	clear: both;
+
+	.button {
+		@include text_button_paddings();
+		margin: 20px 0;
+	}
+}
+
+/*
+Portfolio page
+*/
+ul.portfolio_list {
+	padding-left: 0;
+
+	li {
+		display: none;
+		margin-bottom: 30px;
+
+		&.visible {
+			display: block;
+		}
+
+		&:before,
+		&:after {
+			display: none;
+		}
+	}
+
+	.portfolio_list_image {
+		width: 100%;
+		position: relative;
+		padding-top: (100% / 19) * 8;
+
+		div {
+			//first inside div
+			position: absolute;
+			left: 0;
+			top: 0;
+			bottom: 0;
+			right: 0;
+		}
+
+		.img {
+			background: rgba(0,0,0,0.25);
+			text-align: center;
+			transition: background-color, 300ms;
+		}
+
+		img {
+			display: inline-block;
+			height: 35%;
+			width: auto;
+			margin-top: 14%; //14% fits well
+		}
+
+		&:hover .img {
+			background: rgba(194,2,0,0.5);
+		}
+
+		.preloader {
+			$image_width: image-width('preloader_small.gif');
+			$image_height: image-height('preloader_small.gif');
+			display: block;
+			width: $image_width;
+			height: $image_height;
+			background: image-url('preloader_small.gif') no-repeat;
+			position: absolute;
+			top: 50%;
+			margin-top: -( $image_height / 2 );
+			left: 6%;
+			opacity: 0;
+			transition: opacity 200ms;
+
+			&.active {
+				opacity: 1;
+			}
+		}
+	}
+	.active .img {
+		@media only screen and ( min-width: ( $responsive_first_breakpoint + 1px ) ) {
+			background-color: rgba(194,2,0,0.2);
+		}
+	}
+
+	/*firefox focus normalize*/
+	a:focus {
+		outline: none;
+	}
+}
+
+$indicator_transitions_duration: 300ms; //also in portfolio.js
+
+.article_active_indicator {
+	position: absolute;
+	top: $lumi_box_margin_from_content;
+	bottom: $lumi_box_margin_from_content;
+	right: - ( $lumi_box_margin_from_content + $lumi_box_border_width );
+	border-left: $lumi_box_border_width solid $lumi_box_border_color;
+	width: 0;
+	opacity: 1;
+	transition-property: opacity;
+	transition-delay: $indicator_transitions_duration;
+	transition-duration: $indicator_transitions_duration;
+
+	&.list_hidden {
+		opacity: 0;
+		transition-delay: 0;
+	}
+}
+
+
+.portfolio_list_indicator {
+	position: absolute;
+	left: - $lumi_box_margin_from_content + $lumi_box_border_width; // compenstation for box sizing content-box
+	top: 74px; //will be replaced by js
+	transition-property: top, opacity;
+	transition-duration: $indicator_transitions_duration;
+	transition-delay: 0, $indicator_transitions_duration;
+	width: 100%;
+	box-sizing: content-box;
+	height: 0;
+	padding-bottom: 42.105%; //for images with ratio 19:8 (8/19)
+	border-left: $lumi_box_border_width solid $lumi_box_border_color;
+	z-index: -1;
+
+	&.list_hidden {
+		transition-delay: 0;
+		opacity: 0;
+	}
+
+	@media only screen and ( max-width: $responsive_first_breakpoint ) {
+		display: none;
+	}
+
+	.connect_link {
+		position: absolute;
+		top: 50%;
+		right: 100%;
+		height: 0;
+		margin-right: 1px;
+		border-bottom: $lumi_box_border_width solid $lumi_box_border_color;
+		width: 5.4%;
+	}
+}
+
+@include lumi_pagination( 'portfolio_list_pagination' );
+
+/*
+Hide client on mobile
+*/
+@media only screen and ( max-width: $responsive_first_breakpoint ) {
+	.portfolio_content {
+		display: none;
+	}
+}
+
+/*
+Project styles modify
+*/
+.project_image {
+	width: 100%;
+	margin-bottom: 50px;
+
+	@media only screen and (min-width: ( $responsive_second_breakpoint + 1px )) {
+		width: 50%;
+		float: left;
+		margin-right: 30px;
+	}
+}

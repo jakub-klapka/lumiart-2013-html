@@ -1,0 +1,183 @@
+@import "global";
+
+.home_header {
+	position: relative;
+	margin-bottom: 40px;
+
+	.image_corners {
+		width: calc-percent(377, 782);
+		height: auto;
+	}
+
+	.heading_wrap {
+		display: inline-block;
+		width: 50%;
+		text-align: center;
+		position: absolute;
+		left: 50%;
+		top: 50%;
+		margin-top: -15px;
+	}
+}
+
+.home_ul_wrap {
+	@include clearfix;
+	margin-top: 30px;
+
+	.column {
+		width: 50%;
+		float: left;
+
+		&:first-of-type {
+			text-align: right;
+		}
+	}
+
+	ul {
+		display: inline-block;
+		text-align: left;
+		margin-left: 20px;
+		margin-right: 20px;
+	}
+
+}
+
+//mobile
+@media only screen and (max-width: $responsive_first_breakpoint) {
+
+	.home_header {
+
+		.image_corners {
+			width: 100%;
+			display: block;
+		}
+
+		.heading_wrap {
+			display: block;
+			width: 100%;
+			text-align: center;
+			position: relative;
+			left: auto;
+			top: auto;
+			margin-top: 60px;
+		}
+	}
+
+	.home_ul_wrap {
+
+		.column {
+			width: 100%;
+			float: none;
+
+			&:first-of-type {
+				text-align: left;
+			}
+		}
+
+		ul {
+			display: block;
+			margin: 0;
+		}
+	}
+}
+
+.testimonials_heading_wrap {
+	text-align: center;
+	margin-bottom: 50px;
+
+	h1 {
+		display: inline-block;
+		width: auto;
+	}
+}
+
+
+/*
+Mobile testimonials
+*/
+
+.testimonials_list {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+
+	li {
+		padding-bottom: 60px;
+		display: none; //initialy hide, will be show by js
+
+		&:before {
+			display: none;
+		}
+
+		.image_corners {
+			width: 100%;
+			margin-bottom: 20px;
+		}
+
+		.name {
+			margin-bottom: 20px;
+			text-align: center;
+
+			span {
+				font-weight: bold;
+			}
+
+			a {
+				color: inherit;
+				transition: color 300ms;
+
+				&:hover {
+					color: $main_hover_color;
+				}
+			}
+		}
+
+		q {
+			text-shadow: none;
+			line-height: 2em;
+
+			&:before,
+			&:after {
+				position: static;
+				top: auto;
+				left: auto;
+				font-size: inherit;
+				font-family: inherit;
+			}
+		}
+	}
+}
+
+/*
+Tablet testimonials
+*/
+@media only screen and (min-width: ($responsive_first_breakpoint + 1px)) and (max-width: $responsive_second_breakpoint) {
+
+	.testimonials_heading_wrap h1 br {
+		display: none;
+	}
+
+	.testimonials_list {
+		display: block;
+		position: relative;
+		@include clearfix;
+
+		li {
+			$margin_between_items: 3%;
+			//display: block;
+			float: left;
+			width: (100% - $margin_between_items) / 2;
+
+			&:nth-of-type(2n-1) {
+				margin-right: $margin_between_items;
+			}
+		}
+
+	}
+
+}
+
+/*
+testimonials pagination
+*/
+@include lumi_pagination('testimonials_pagination');

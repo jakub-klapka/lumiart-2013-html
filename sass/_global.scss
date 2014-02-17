@@ -1,0 +1,102 @@
+/* Gobal variables and classes for usage throughout the page */
+
+@import "compass";
+
+@function calc-percent($target, $container) {
+	@return ($target / $container) * 100%;
+}
+
+/*
+global variables
+*/
+//$glow_text_shadow: 0 0 0.4em #FFF, 0 0 0.4em rgba(255,255,255,0.3);
+
+$responsive_first_breakpoint: 767px;
+
+$menu_breakpoint: 480px;
+
+$responsive_second_breakpoint: 1024px;
+
+$main_hover_color: #c20200;
+$headings_underline_color: #a6d43c;
+$contact_position_color: #fab210;
+
+@mixin text_button_paddings() {
+	padding-left: 20px;
+	padding-right: 20px;
+}
+
+@mixin body_font_settings() {
+	color: #FFF;
+	font-family: Electrolize;
+	font-size: 14px;
+
+	@media only screen and (max-width: $responsive_second_breakpoint) {
+		font-size: 16px;
+	}
+}
+
+
+//$glow_text_shadow: 0 0 30px #FFF, 0 0 30px rgba(255,255,255,0.5);
+$glow_spread: 1em;
+$glow_color: rgba(255,255,255,0.8);
+$glow_text_shadow: 0 0 $glow_spread $glow_color;
+
+$buttons_transition_duration: 500ms;
+
+/*
+Lumi box variables
+*/
+$lumi_box_border_color: rgba(255,255,255,0.15);
+$lumi_box_border_width: 1px;
+$lumi_box_margin_from_content: 15px; //also in portfolio.js
+$lumi_box_top_bottom_gutter: 60px;
+
+
+@mixin lumi_pagination( $main_class: 'testimonials_pagination' ) {
+
+	.#{$main_class} {
+		text-align: center;
+
+		button {
+			border: none;
+			background: none;
+			display: inline-block;
+		}
+
+		.prev,
+		.next {
+			font-size: 30px;
+			line-height: 30px;
+			padding: 5px 15px;
+			height: 40px;
+			margin-left: 20px;
+			margin-right: 20px;
+		}
+
+		.page {
+			display: inline-block;
+			height: 40px;
+			line-height: 40px;
+			border: 1px solid #FFF;
+			padding-left: 20px;
+			padding-right: 20px;
+			vertical-align: top;
+			font-size: 14px;
+			box-shadow: 0 0 $glow_spread rgba($glow_color, 0.3), 0 0 ($glow_spread + 0.5em) rgba($glow_color, 0.3) inset;
+		}
+	}
+}
+
+@mixin iconfont_common() {
+	font-family: iconfont;
+	speak: none;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+	/* Better Font Rendering =========== */
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}

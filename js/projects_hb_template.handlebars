@@ -1,0 +1,23 @@
+{{#if client_heading}}
+	<div class="client_heading"><h2 class="same_as_h1 brace_it">{{{client_heading}}}</h2></div>
+{{/if}}
+
+{{#if project_image_markup}}
+	<div class="image_corners ratio_19_12 project_image">
+		<div>
+			{{{project_image_markup}}}
+		</div>
+	</div>
+{{/if}}
+
+{{#if project_description}}
+	{{{project_description}}}
+{{/if}}
+
+{{#if link}}
+	<div class="center_inside client_link"><a class="button" href="{{link.href}}">{{link.text}}<div class="left_glow"></div><div class="right_glow"></div></a></div>
+{{/if}}
+
+{{#if share_content}}
+	<div class="client_share_buttons">{{{share_content}}}</div>
+{{/if}}

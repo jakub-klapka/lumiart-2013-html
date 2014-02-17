@@ -1,0 +1,358 @@
+<!doctype html>
+<html lang="cs-CZ" class="">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<title>Lumiart</title>
+
+	<link rel="stylesheet" href="css/layout.css"/>
+
+	<script type="text/javascript">
+		window.root_url = '';
+	</script>
+
+	<script type="text/javascript" src="js/modernizr.js"></script>
+	<script type="text/javascript" src="js/picturefill.js"></script>
+	<script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
+	<script type="text/javascript" src="js/jquery.mobile.custom.min.js"></script>
+	<script type="text/javascript" src="js/layout.js"></script>
+
+</head>
+<body>
+
+<div class="page_wrap">
+	<header class="main_header lumi_box" role="banner">
+		<a href="" class="logo"><span>LUMIART</span></a>
+		<button class="open_menu button" aria-controls="menu" aria-hidden="true" role="button" aria-pressed="false">
+			<span>Open menu</span>
+			<i class="icon icon_open_menu"></i>
+			<div class="left_glow"></div><div class="right_glow"></div>
+		</button>
+		<button class="share button" role="button" aria-haspopup="true">
+			<span>Share</span>
+			<i class="icon icon_share"></i>
+			<div class="left_glow"></div><div class="right_glow"></div>
+		</button>
+		<a href="" class="languages button">
+			<span>CZ</span>&nbsp;&nbsp;/&nbsp;&nbsp;<span class="active">EN</span>
+			<div class="left_glow"></div><div class="right_glow"></div>
+		</a>
+		<nav class="main_menu" id="menu">
+			<h3 class="hidden" aria-hidden="false">Menu</h3>
+			<ul role="navigation">
+				<li><a href="" class="button">Menu Button<div class="left_glow"></div><div class="right_glow"></div></a></li>
+				<li><a href="" class="button">Menu Button<div class="left_glow"></div><div class="right_glow"></div></a></li>
+				<li><a href="" class="button">Button<div class="left_glow"></div><div class="right_glow"></div></a></li>
+				<li><a href="" class="button">Longer Menu Button<div class="left_glow"></div><div class="right_glow"></div></a></li>
+				<li><a href="" class="button">Menu Button<div class="left_glow"></div><div class="right_glow"></div></a></li>
+			</ul>
+			<!-- nonsemantic stuff -->
+			<div class="left_corners" aria-hidden="true"></div><div class="right_corners" aria-hidden="true"></div><div class="top_tag" aria-hidden="true">Menu</div><div class="bottom_tag" aria-hidden="true">Menu</div>
+			<!-- /nstuff -->
+		</nav>
+
+		<!-- nonsemantic stuff -->
+		<div class="left_corners" aria-hidden="true"></div><div class="right_corners" aria-hidden="true"></div><div class="top_tag" aria-hidden="true">Header</div><div class="bottom_tag" aria-hidden="true">Header</div>
+		<!-- /nstuff -->
+	</header>
+
+
+	<div class="main_content two_thirds" role="main">
+		<article class="lumi_box">
+
+			<h1>Images test</h1>
+
+			<p>
+			<div class="image_corners ratio_19_12 large wp-image">
+				<div>
+					<img src="sample_content/pavel-stastny_1.jpg" alt=""/>
+				</div>
+			</div>
+			</p>
+			<p>
+			<div class="image_corners ratio_19_12 large wp-image">
+				<div>
+					<img src="sample_content/pavel-stastny_2.jpg" alt=""/>
+				</div>
+			</div>
+			</p>
+			<p>
+			<div class="image_corners ratio_19_12 medium wp-image alignleft">
+				<div>
+					<img src="sample_content/pavel-stastny_3.jpg" alt=""/>
+				</div>
+			</div>
+			</p>
+			<p>
+			<div class="image_corners ratio_19_12 small alignright wp-image">
+				<div>
+					<img src="sample_content/pavel-stastny_4.jpg" alt=""/>
+				</div>
+			</div>
+			</p>
+
+			<div class="clear"></div>
+			<h1>Picturefill test</h1>
+			<div class="image_corners ratio_19_12 large wp-image">
+				<div>
+					<span data-picture data-alt="Picturefill test">
+						<span data-src="http://placehold.it/190x120"></span>
+						<span data-src="http://placehold.it/19x12" data-media="(max-width: 768px)"></span>
+						<span data-src="http://placehold.it/1900x1200" data-media="(max-width: 768px) and (-webkit-min-device-pixel-ratio: 2),(min-resolution: 192dpi)"></span>
+						<span data-src="http://placehold.it/102x80" data-media="(min-width: 769px) and (max-width: 1024px)"></span>
+						<span data-src="http://placehold.it/1900x1200" data-media="(min-width: 769px) and (max-width: 1024px) and (-webkit-min-device-pixel-ratio: 2),(min-resolution: 192dpi)"></span>
+						<span data-src="http://placehold.it/1111x300" data-media="(min-width: 1025px)"></span>
+						<span data-src="http://placehold.it/1900x1200" data-media="(min-width: 1025px) and (-webkit-min-device-pixel-ratio: 2),(min-resolution: 192dpi)"></span>
+						<noscript>
+							<img src="http://placehold.it/190x120" alt="A giant stone face at The Bayon temple in Angkor Thom, Cambodia">
+						</noscript>
+				    </span>
+				</div>
+			</div>
+
+
+			<h1>Wordpress editor images handling</h1>
+			<h2>Small image</h2>
+			<div class="image_corners ratio_19_12 small wp-image">
+				<div>
+					<img src="http://placehold.it/190x120" alt=""/>
+				</div>
+			</div>
+			<h2>Medium image</h2>
+			<div class="image_corners ratio_19_12 medium wp-image">
+				<div>
+					<img src="http://placehold.it/190x120" alt=""/>
+				</div>
+			</div>
+			<h2>Large image</h2>
+			<div class="image_corners ratio_19_12 large wp-image">
+				<div>
+					<img src="http://placehold.it/190x120" alt=""/>
+				</div>
+			</div>
+			<br/><br/>
+
+			<h1>Wordpress aligns</h1>
+			<h2>No align</h2>
+			<div class="image_corners ratio_19_12 small wp-image alignone">
+				<div>
+					<img src="http://placehold.it/190x120" alt=""/>
+				</div>
+			</div>
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur culpa debitis deserunt dolores esse excepturi fuga, illo maiores maxime molestiae nam necessitatibus quae quasi quod rem repellat repellendus similique, voluptatem.</p>
+
+			<div class="clear"></div>
+			<h2>Align left</h2>
+			<div class="image_corners ratio_19_12 small wp-image alignleft">
+				<div>
+					<img src="http://placehold.it/190x120" alt=""/>
+				</div>
+			</div>
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur culpa debitis deserunt dolores esse excepturi fuga, illo maiores maxime molestiae nam necessitatibus quae quasi quod rem repellat repellendus similique, voluptatem.</p>
+
+			<div class="clear"></div>
+			<h2>Align right</h2>
+			<div class="image_corners ratio_19_12 small wp-image alignright">
+				<div>
+					<img src="http://placehold.it/190x120" alt=""/>
+				</div>
+			</div>
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur culpa debitis deserunt dolores esse excepturi fuga, illo maiores maxime molestiae nam necessitatibus quae quasi quod rem repellat repellendus similique, voluptatem.</p>
+
+			<div class="clear"></div>
+			<h2>Align center</h2>
+			<div class="image_corners ratio_19_12 small wp-image aligncenter">
+				<div>
+					<img src="http://placehold.it/190x120" alt=""/>
+				</div>
+			</div>
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur culpa debitis deserunt dolores esse excepturi fuga, illo maiores maxime molestiae nam necessitatibus quae quasi quod rem repellat repellendus similique, voluptatem.</p>
+
+			<h1>Anchors</h1>
+			<div class="clear"></div>
+			<a class="image_corners hover ratio_19_12 wp-image small alignleft" href="">
+				<div>
+					<img src="http://placehold.it/190x120" alt=""/>
+				</div>
+				<svg class="svg_corner_top" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="blue" x="0" y="0" viewBox="0 0 24 24" xml:space="preserve">
+				  <path class="st0" d="M0 24v-2L22 0h2L0 24z"/>
+				  <path class="st1" d="M7 0L0 7v9L16 0H7zM1 8l7-7h5L1 13V8z"/>
+				</svg>
+				<svg class="svg_corner_bottom" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="blue" x="0px" y="0px" width="37px" height="37px" viewBox="0 0 37 37" xml:space="preserve">
+				  <path class="st1" d="M8 37h14l15-15V8L8 37zM36 21L21 36H11l25-25V21z"/>
+				  <path class="st0" d="M37 0v2L2 37H0L37 0z"/>
+				</svg>
+			</a>
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore, repudiandae, suscipit? Corporis facere hic incidunt nesciunt, numquam placeat provident quibusdam quidem similique ullam! Ab laboriosam minima nisi reiciendis reprehenderit voluptas.</p>
+
+			<div class="clear"></div>
+			<h1>Captions</h1><div class="clear"></div>
+			<div class="wp-caption alignleft small">
+				<div class="image_corners ratio_19_12 small wp-image">
+					<div>
+						<img src="http://placehold.it/190x120" alt=""/>
+					</div>
+				</div>
+				<p class="wp-caption-text">Lorem ipsum</p>
+			</div>
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A aperiam at deleniti dignissimos distinctio
+				dolor dolores ducimus earum esse illo laboriosam minus nesciunt nisi possimus quam ratione tenetur vero,
+				vitae?</p>
+
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Earum illo minima nisi sequi sunt velit
+				voluptatibus. Ad architecto dignissimos eaque harum nostrum nulla officiis porro provident recusandae
+				similique, tenetur voluptates!</p>
+
+			<p>Commodi distinctio fuga magnam maiores modi numquam odio placeat quaerat quas repellendus? Ad aut cum
+				cupiditate ea hic id minus nesciunt nihil odit quam quod sit sunt, totam, unde voluptatibus.</p>
+
+			<p>Consectetur exercitationem incidunt molestias placeat quam quis saepe. Consequuntur cumque eius enim
+				nobis provident, quod sunt tenetur voluptatum. Ad aperiam at consectetur earum enim modi odio
+				perspiciatis quae ratione reprehenderit?</p>
+			<div class="clear"></div>
+			<h2>With anchor and right</h2>
+			<div class="wp-caption alignright small">
+				<a class="image_corners hover ratio_19_12 wp-image" href="">
+					<div>
+						<img src="http://placehold.it/190x120" alt=""/>
+					</div>
+					<svg class="svg_corner_top" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="blue" x="0" y="0" viewBox="0 0 24 24" xml:space="preserve">
+				  <path class="st0" d="M0 24v-2L22 0h2L0 24z"/>
+				  <path class="st1" d="M7 0L0 7v9L16 0H7zM1 8l7-7h5L1 13V8z"/>
+				</svg>
+				<svg class="svg_corner_bottom" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="blue" x="0px" y="0px" width="37px" height="37px" viewBox="0 0 37 37" xml:space="preserve">
+				  <path class="st1" d="M8 37h14l15-15V8L8 37zM36 21L21 36H11l25-25V21z"/>
+				  <path class="st0" d="M37 0v2L2 37H0L37 0z"/>
+				</svg>
+				</a>
+				<p class="wp-caption-text">Lorem ipsum</p>
+			</div>
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque, earum et facilis magnam non nostrum
+				officia omnis porro sit tempore? Aperiam distinctio expedita fuga harum nobis nulla, quibusdam sunt
+				voluptates!</p>
+
+			<p>A autem blanditiis commodi cumque debitis ducimus earum eligendi est eum eveniet explicabo fuga fugiat
+				incidunt modi nam nesciunt, possimus quisquam quo quos reprehenderit saepe sed sint temporibus, totam
+				ullam.</p>
+
+			<p>Ab accusamus architecto atque consequatur cum cupiditate ex expedita facilis fugiat hic, inventore ipsa
+				iure iusto natus odit officiis perferendis quae quaerat quas quia ratione sit sunt tempora vel
+				voluptatibus.</p>
+
+			<p>Cupiditate eligendi eos fuga laboriosam magnam minus natus pariatur rerum veniam vero. At doloremque,
+				doloribus, ducimus esse fugit harum impedit odio officiis perferendis quam quia sit tenetur
+				voluptatibus? Deserunt, eos?</p>
+
+			<!-- nonsemantic stuff -->
+			<div class="left_corners" aria-hidden="true"></div><div class="right_corners" aria-hidden="true"></div><div class="top_tag" aria-hidden="true">Content</div><div class="bottom_tag" aria-hidden="true">Content</div>
+			<!-- /nstuff -->
+		</article>
+		<aside class="lumi_box">
+			sidebar
+			<!-- nonsemantic stuff -->
+			<div class="left_corners" aria-hidden="true"></div><div class="right_corners" aria-hidden="true"></div><div class="top_tag" aria-hidden="true">Content</div><div class="bottom_tag" aria-hidden="true">Content</div>
+			<!-- /nstuff -->
+		</aside>
+	</div>
+
+	<div class="main_content">
+		<article class="lumi_box">
+			<h1>Wordpress editor images handling</h1>
+			<h2>Small image</h2>
+			<div class="image_corners ratio_19_12 small wp-image">
+				<div>
+					<img src="http://placehold.it/190x120" alt=""/>
+				</div>
+			</div>
+			<h2>Medium image</h2>
+			<div class="image_corners ratio_19_12 medium wp-image">
+				<div>
+					<img src="http://placehold.it/190x120" alt=""/>
+				</div>
+			</div>
+			<h2>Large image</h2>
+			<div class="image_corners ratio_19_12 large wp-image">
+				<div>
+					<img src="http://placehold.it/190x120" alt=""/>
+				</div>
+			</div>
+		</article>
+	</div>
+
+	<div class="main_content one_half">
+		<article class="lumi_box">
+			<h1>Wordpress editor images handling</h1>
+			<h2>Small image</h2>
+			<div class="image_corners ratio_19_12 small wp-image">
+				<div>
+					<img src="http://placehold.it/190x120" alt=""/>
+				</div>
+			</div>
+			<h2>Medium image</h2>
+			<div class="image_corners ratio_19_12 medium wp-image">
+				<div>
+					<img src="http://placehold.it/190x120" alt=""/>
+				</div>
+			</div>
+			<h2>Large image</h2>
+			<div class="image_corners ratio_19_12 large wp-image">
+				<div>
+					<img src="http://placehold.it/190x120" alt=""/>
+				</div>
+			</div>
+		</article>
+		<article class="lumi_box">
+			<h1>Wordpress editor images handling</h1>
+			<h2>Small image</h2>
+			<div class="image_corners ratio_19_12 small wp-image">
+				<div>
+					<img src="http://placehold.it/190x120" alt=""/>
+				</div>
+			</div>
+			<h2>Medium image</h2>
+			<div class="image_corners ratio_19_12 medium wp-image">
+				<div>
+					<img src="http://placehold.it/190x120" alt=""/>
+				</div>
+			</div>
+			<h2>Large image</h2>
+			<div class="image_corners ratio_19_12 large wp-image">
+				<div>
+					<img src="http://placehold.it/190x120" alt=""/>
+				</div>
+			</div>
+		</article>
+	</div>
+
+
+	<footer class="main_footer lumi_box" role="contentinfo">
+		<div class="copyright">&copy;2013 Lumiart.cz</div>
+		<div class="buttons">
+			<a class="button facebook" href="">
+				<span>Social button</span>
+				<i class="icon icon_facebook"></i>
+				<div class="left_glow"></div><div class="right_glow"></div>
+			</a>
+			<a class="button twitter" href="">
+				<span>Social button</span>
+				<i class="icon icon_twitter"></i>
+				<div class="left_glow"></div><div class="right_glow"></div>
+			</a>
+			<button class="button back_to_top" role="button">
+				<span>Back to top</span>
+				<i class="icon icon_back_to_top"></i>
+				<div class="left_glow"></div><div class="right_glow"></div>
+			</button>
+		</div>
+
+		<!-- nonsemantic stuff -->
+		<div class="left_corners" aria-hidden="true"></div><div class="right_corners" aria-hidden="true"></div><div class="top_tag" aria-hidden="true">Footer</div><div class="bottom_tag" aria-hidden="true">Footer</div>
+		<!-- /nstuff -->
+	</footer>
+
+</div>
+
+
+</body>
+</html>

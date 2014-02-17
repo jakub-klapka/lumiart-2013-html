@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="cs-CZ" class="">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<title>Lumiart</title>
+
+	<link rel="stylesheet" href="css/layout.css"/>
+	<link rel="stylesheet" href="css/contact.css"/>
+
+	<script type="text/javascript">
+		window.root_url = '';
+	</script>
+
+	<script type="text/javascript" src="js/modernizr.js"></script>
+	<script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
+	<script type="text/javascript" src="js/jquery.mobile.custom.min.js"></script>
+	<script type="text/javascript" src="js/layout.js"></script>
+	<script type="text/javascript" src="js/jquery.autosize.min.js"></script>
+	<script type="text/javascript" src="js/contact.js"></script>
+
+</head>
+<body>
+
+<div class="page_wrap">
+	<header class="main_header lumi_box" role="banner">
+		<a href="" class="logo"><span>LUMIART</span></a>
+		<button class="open_menu button" aria-controls="menu" aria-hidden="true" role="button" aria-pressed="false">
+			<span>Open menu</span>
+			<i class="icon icon_open_menu"></i>
+			<div class="left_glow"></div><div class="right_glow"></div>
+		</button>
+		<button class="share button" role="button" aria-haspopup="true">
+			<span>Share</span>
+			<i class="icon icon_share"></i>
+			<div class="left_glow"></div><div class="right_glow"></div>
+		</button>
+		<a href="" class="languages button">
+			<span>CZ</span>&nbsp;&nbsp;/&nbsp;&nbsp;<span class="active">EN</span>
+			<div class="left_glow"></div><div class="right_glow"></div>
+		</a>
+		<nav class="main_menu" id="menu">
+			<h3 class="hidden" aria-hidden="false">Menu</h3>
+			<ul role="navigation">
+				<li><a href="" class="button">Menu Button<div class="left_glow"></div><div class="right_glow"></div></a></li>
+				<li><a href="" class="button">Menu Button<div class="left_glow"></div><div class="right_glow"></div></a></li>
+				<li><a href="" class="button">Button<div class="left_glow"></div><div class="right_glow"></div></a></li>
+				<li><a href="" class="button">Longer Menu Button<div class="left_glow"></div><div class="right_glow"></div></a></li>
+				<li><a href="" class="button">Menu Button<div class="left_glow"></div><div class="right_glow"></div></a></li>
+			</ul>
+			<!-- nonsemantic stuff -->
+			<div class="left_corners" aria-hidden="true"></div><div class="right_corners" aria-hidden="true"></div><div class="top_tag" aria-hidden="true">Menu</div><div class="bottom_tag" aria-hidden="true">Menu</div>
+			<!-- /nstuff -->
+		</nav>
+
+		<!-- nonsemantic stuff -->
+		<div class="left_corners" aria-hidden="true"></div><div class="right_corners" aria-hidden="true"></div><div class="top_tag" aria-hidden="true">Header</div><div class="bottom_tag" aria-hidden="true">Header</div>
+		<!-- /nstuff -->
+	</header>
+
+
+
+	<div class="main_content" role="main">
+		<article class="lumi_box">
+			<div class="center_inside"><h1 class="brace_it">Hire_US</h1></div>
+
+			<form action="a.html" class="contact_form" novalidate="novalidate">
+				<div class="form_input_radio">
+					<input type="radio" name="type_of_post" id="general_question" data-hide-general-question value="General Question" checked="checked" />
+					<label for="general_question">Just Question</label>
+					<input type="radio" name="type_of_post" id="hire_us" data-hide-hire-us value="Hire Us"/>
+					<label for="hire_us">Hire Us</label>
+				</div>
+				<div class="form_input_text">
+					<label for="name">Name</label>
+					<input type="text" id="name" name="name" placeholder="John Doe" class="required" required aria-required="true" />
+				</div>
+				<div class="form_input_text">
+					<label for="email">E-mail</label>
+					<input type="email" id="email" name="email" placeholder="johndoe@company.org" class="required" required aria-required="true" />
+				</div>
+
+				<div class="hire_us">
+					<div class="form_input_text">
+						<label for="type_of_job">Type of job</label>
+						<input type="text" id="type_of_job" name="type_of_job" placeholder="Complete website" />
+					</div>
+					<div class="form_input_text">
+						<label for="budget">Budget</label>
+						<input type="text" id="budget" name="budget" placeholder="$1000" />
+					</div>
+					<div class="form_input_text">
+						<label for="size">Size of site</label>
+						<input type="text" id="size" name="budget" placeholder="10 static pages" />
+					</div>
+					<div class="form_input_radio">
+						<div class="radio_label tooltip" id="responsive">
+							<span>Responsive webdesign?</span>
+							<div class="tooltip_content"><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias
+								aspernatur dicta dolor error laboriosam magnam natus nemo non saepe voluptatum.</p>
+
+								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus aliquid amet
+									aperiam, autem fugit id illo laboriosam minus repellat veniam.</p>
+							</div>
+						</div>
+						<input type="radio" name="responsive" id="responsive_yes" value="Yes" checked="checked" aria-labelledby="responsive" />
+						<label for="responsive_yes">Yes</label>
+						<input type="radio" name="responsive" id="responsive_no" value="No" aria-labelledby="responsive" />
+						<label for="responsive_no">No</label>
+						<input type="radio" name="responsive" id="responsive_dont_know" value="Don't know" aria-labelledby="responsive" />
+						<label for="responsive_dont_know">Don't know</label>
+					</div>
+				</div>
+
+				<div class="form_input_text">
+					<label for="comment">Comment</label>
+					<textarea name="comment" id="comment" placeholder="comment here..."></textarea>
+				</div>
+				<div class="button submit_button"><input type="submit" name="submit" value="Submit" /><img class="ajax-loader" src="images/form_preloader.gif" alt="Odesílám..." style="" hidden><div class="left_glow"></div><div class="right_glow"></div></div>
+
+				<div class="wpcf7-response-output wpcf7-display-none wpcf7-mail-sent-ok" style="">Vaše zpráva byla úspěšně odeslána. Děkujeme.</div>
+			</form>
+
+
+			<!-- nonsemantic stuff -->
+			<div class="left_corners" aria-hidden="true"></div><div class="right_corners" aria-hidden="true"></div><div class="top_tag" aria-hidden="true">Content</div><div class="bottom_tag" aria-hidden="true">Content</div>
+			<!-- /nstuff -->
+		</article>
+	</div>
+
+
+
+
+
+	<footer class="main_footer lumi_box" role="contentinfo">
+		<div class="copyright">&copy;2013 Lumiart.cz</div>
+		<div class="buttons">
+			<a class="button facebook" href="">
+				<span>Social button</span>
+				<i class="icon icon_facebook"></i>
+				<div class="left_glow"></div><div class="right_glow"></div>
+			</a>
+			<a class="button twitter" href="">
+				<span>Social button</span>
+				<i class="icon icon_twitter"></i>
+				<div class="left_glow"></div><div class="right_glow"></div>
+			</a>
+			<button class="button back_to_top" role="button">
+				<span>Back to top</span>
+				<i class="icon icon_back_to_top"></i>
+				<div class="left_glow"></div><div class="right_glow"></div>
+			</button>
+		</div>
+
+		<!-- nonsemantic stuff -->
+		<div class="left_corners" aria-hidden="true"></div><div class="right_corners" aria-hidden="true"></div><div class="top_tag" aria-hidden="true">Footer</div><div class="bottom_tag" aria-hidden="true">Footer</div>
+		<!-- /nstuff -->
+	</footer>
+
+</div>
+
+
+</body>
+</html>

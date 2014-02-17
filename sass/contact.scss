@@ -1,0 +1,381 @@
+@import "global";
+
+.contact_form {
+	margin-top: 30px;
+	margin-bottom: 50px;
+	text-align: center;
+
+	$form_max_width: 400px;
+	@media only screen and ( min-width: ( $responsive_first_breakpoint + 1px ) ) {
+		max-width: $form_max_width;
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	$input_height: 3em;
+
+	%form_input_common {
+		//valid for all inputs - fields and ratios as well
+		margin-bottom: 30px;
+		position: relative;
+	}
+
+	%form_text_common {
+		//same text for labels, radio options etc.
+		font-family: Electrolize;
+		font-size: 18px;
+		text-shadow: $glow_text_shadow;
+	}
+
+	$width_from_which_are_labels_on_left: $responsive_second_breakpoint + 100px;
+
+	%labels_on_left_side {
+		//styling for label text on left side - eg. headings for each input
+		@extend %form_text_common;
+		display: block;
+		text-align: center;
+		text-transform: uppercase;
+		margin-bottom: 10px;
+
+		@media only screen and ( min-width: $width_from_which_are_labels_on_left ) { //magic muber based on longest text
+			//move labels to left on big viewport
+			position: absolute;
+			right: 100%;
+			top: 0;
+			bottom: 0;
+			white-space: nowrap;
+			text-align: right;
+			line-height: $input_height;
+			margin-right: 30px;
+		}
+
+
+	}
+
+	.form_input_text {
+		@extend %form_input_common;
+
+		&.valid:after,
+		&.not_valid:after {
+			@include iconfont_common();
+			position: absolute;
+			top: 2px;
+			right: 20px;
+			font-size: 12px;
+
+			@media only screen and ( min-width: $width_from_which_are_labels_on_left ) {
+				right: -40px;
+				top: 0;
+				bottom: 0;
+				font-size: 20px;
+				line-height: $input_height - 0.3em;
+			}
+		}
+
+		@mixin form_input_validation_common($color) {
+			color: $color;
+			text-shadow: 0 0 15px rgba( $color, 0.7 );
+		}
+
+		&.valid:after {
+			@include form_input_validation_common(#a6d43c);
+			content: "\e008";
+		}
+
+		&.not_valid:after {
+			@include form_input_validation_common(#c20200);
+			content: "\e007";
+		}
+
+		label {
+			@extend %labels_on_left_side;
+		}
+
+	}
+
+
+	.form_input_radio {
+		@extend %form_input_common;
+		@extend %form_text_common;
+		//height: $input_height;
+
+		input {
+			display: none;
+		}
+
+		label {
+			display: inline-block;
+			margin: 0 40px;
+			cursor: pointer;
+			line-height: $input_height;
+			position: relative;
+			white-space: nowrap;
+
+			&:first-of-type {
+				margin-left: 30px; //compenate for label pseudo - custom checkbox
+			}
+
+			&:last-of-type {
+				margin-right: 0;
+			}
+
+			&::before {
+				//outside frame
+				@include iconfont_common();
+				$size: 20px;
+				content: '\e60e';
+				color: #FFF;
+				text-shadow: $glow_text_shadow;
+				font-size: $size;
+				line-height: $size;
+				position: absolute;
+				right: 100%;
+				top: 50%;
+				margin-top: -($size/2);
+				margin-right: 10px; //padding from label itself
+				transition-property: color, text-shadow-color;
+				transition-duration: 300ms;
+			}
+
+			&::after {
+				//inner bullet
+				@include iconfont_common();
+				$size: 10px;
+				content: "\e60f";
+				font-size: $size;
+				line-height: $size;
+				position: absolute;
+				right: 100%;
+				top: 50%;
+				text-shadow: none;
+				color: transparent;
+				margin-top: -($size/2);
+				margin-right: 15px; //padding from label itself
+				transition: color 300ms;
+			}
+
+			&:hover::before {
+				color: $main_hover_color;
+				text-shadow: 0 0 $glow_spread $main_hover_color;
+			}
+
+			@media only screen and (max-width: 460px) {
+				//on small screens, delete disproporcional margins, becaouse labels will flow on next line
+
+				margin: 10px 0 0 45px;
+
+
+			}
+		}
+
+		input:checked + label::after {
+			color: #c20200;
+		}
+
+		.radio_label {
+			@extend %labels_on_left_side;
+		}
+	}
+
+
+	input[type=text],
+	input[type=email],
+	textarea {
+		display: block;
+		width: 100%;
+		background: none;
+		border: 1px solid #FFF;
+		height: $input_height;
+		font-family: Electrolize;
+		font-size: 18px;
+		line-height: 1.5em;
+		color: #FFF;
+		box-shadow: 0 0 $glow_spread rgba(255,255,255,0.4), 0 0 $glow_spread rgba(255,255,255,0.4) inset;
+		padding: 10px;
+		text-align: center;
+		border-radius: 0;
+
+		&:focus {
+			outline: none;
+		}
+	}
+
+	textarea {
+		resize: none;
+		transition-property: height;
+		transition-duration: 300ms;
+	}
+
+	$form_placeholder_prefixes: ('::-webkit-input-placeholder', ':-moz-placeholder', '::-moz-placeholder', ':-ms-input-placeholder', '::input-placeholder', '::placeholder' );
+	@each $prefix in $form_placeholder_prefixes {
+
+		input[placeholder]#{$prefix},
+		textarea[placeholder]#{$prefix} {
+			color: rgba(255,255,255,0.25);
+		}
+
+	}
+
+	input[type=submit] {
+		background: none;
+		border: none;
+	}
+
+	.submit_button {
+		display: inline-block;
+		padding-top: 0;
+		padding-bottom: 0;
+		margin-top: 20px;
+
+		input {
+			@include body_font_settings;
+			@include text_button_paddings;
+			padding-top: 13px;
+			padding-bottom: 13px;
+			text-transform: uppercase;
+			text-shadow: $glow_text_shadow;
+			z-index: 10;
+			position: relative;
+			transition-property: color, text-shadow;
+			transition-duration: $buttons_transition_duration;
+
+			&:active,
+			&:focus {
+				color: $main_hover_color;
+				text-shadow: none;
+				outline: none;
+			}
+		}
+	}
+
+	.ajax-loader {
+		position: absolute;
+		bottom: -80px;
+		left: 50%;
+		margin-left: -32px;
+	}
+
+	.wpcf7-response-output {
+		margin-top: 20px;
+		padding: 10px;
+		border: 1px solid green;
+
+		&.wpcf7-validation-errors,
+		&.wpcf7-spam-blocked,
+		&.wpcf7-mail-sent-ng {
+			border-color: red;
+		}
+
+	}
+
+	.wpcf7-display-none {
+		display: none;
+	}
+
+	.tooltip {
+		position: relative;
+
+		span {
+			border-bottom: 1px solid #535353;
+			cursor: pointer;
+		}
+
+		.tooltip_content {
+			position: absolute;
+			top: 100%;
+			$tooltip_background: #FFF;
+			background: $tooltip_background;
+			z-index: 100;
+			color: #000;
+			margin-top: 20px;
+			padding: 10px;
+			//font-family: Arial, Helvetica, sans-serif;
+			font-size: 14px;
+			text-transform: none;
+			pointer-events: none;
+			opacity: 0; //initially
+			transition: opacity 300ms;
+
+			//For old browsers - will be handled by JS
+			.no-pointerevents & {
+				opacity: 1;
+				display: none;
+			}
+
+			p {
+				text-align: inherit;
+				font-size: inherit;
+				line-height: inherit;
+
+				&:last-child {
+					margin-bottom: 0;
+				}
+			}
+			
+			$triangle_size: 12px;
+			
+			&::before {
+				//triangle
+				content: '';
+				
+				position: absolute;
+				bottom: 100%;
+				left: 50%;
+				margin-left: -($triangle_size/2);
+				width: 0px;
+				height: 0px;
+				border-style: solid;
+				border-width: 0 $triangle_size $triangle_size $triangle_size;
+				border-color: transparent transparent $tooltip_background transparent;
+			}
+
+			@media only screen and (min-width: $width_from_which_are_labels_on_left) {
+				//On desktop and more
+				top: 0;
+				left: 100%;
+				margin-left: 30px;
+				margin-top: 0px;
+				width: $form_max_width;
+				white-space: normal;
+				line-height: 1.2em;
+				text-align: center;
+
+				&::before {
+					width: 0px;
+					height: 0px;
+					border-style: solid;
+					border-width: $triangle_size $triangle_size $triangle_size 0;
+					border-color: transparent $tooltip_background transparent transparent;
+					right: 100%;
+					top: 13px;
+					bottom: auto;
+					left: auto;
+				}
+			}
+		}
+
+		&::after {
+			@include iconfont_common();
+			color: #FFF;
+			display: inline-block;
+			font-size: 17px;
+			margin-left: 10px;
+			margin-bottom: -5px;
+			text-shadow: none;
+			content: '\e600';
+		}
+
+		//let's add some css interactions
+		.pointerevents &:hover {
+
+			.tooltip_content {
+				opacity: 1;
+			}
+		}
+	}
+
+	.hire_us {
+		display: none; //by default, will be shown by JS
+	}
+
+}

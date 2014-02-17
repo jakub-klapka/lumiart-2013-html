@@ -1,0 +1,26 @@
+{
+    "client_heading": "Client_3",
+    "images": [
+        {
+            "src": "http://placehold.it/190x120",
+            "alt": "Alternate"
+        },
+        {
+            "src": "http://placehold.it/190x120",
+            "alt": "Alternate"
+        },
+        {
+            "src": "http://placehold.it/190x120",
+            "alt": "Alternate"
+        },
+        {
+            "src": "http://placehold.it/190x120",
+            "alt": "Alternate"
+        }
+    ],
+    "link": {
+        "href": "http://www.lumiart.cz",
+        "text": "visit www.client.com"
+    },
+    "share_content": "<b>Bold</b>"
+}

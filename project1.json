@@ -1,0 +1,10 @@
+{
+	"client_heading": "ROCK&#8217;N'PIXEL",
+	"project_image_markup": "<img src=\"http://placehold.it/100x50\" alt=\"\"/>",
+	"link": {
+		"href": "http://www.lumiart.cz",
+		"text": "visit www.client.com"
+	},
+	"project_description": "<b>html content</b>",
+	"share_content": "<b>Bold</b>"
+}

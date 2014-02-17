@@ -1,0 +1,22 @@
+{
+	"client_heading": "Client_1",
+	"images": [
+		{
+			"markup": "<img src=\"sample_content/pavel-stastny_1.jpg\" alt=\"\"/>"
+		},
+		{
+			"markup": "<img src=\"sample_content/pavel-stastny_2.jpg\" alt=\"\"/>"
+		},
+		{
+			"markup": "<img src=\"sample_content/pavel-stastny_3.jpg\" alt=\"\"/>"
+		},
+		{
+			"markup": "<img src=\"sample_content/pavel-stastny_4.jpg\" alt=\"\"/>"
+		}
+	],
+	"link": {
+		"href": "http://www.lumiart.cz",
+		"text": "visit www.client.com"
+	},
+	"share_content": "<b>Bold</b>"
+}

@@ -1,0 +1,18 @@
+{
+    "client_heading": "Client_2",
+    "images": [
+        {
+            "src": "sample_content/ar_1.jpg",
+            "alt": "Alternate"
+        },
+        {
+            "src": "sample_content/ar_2.jpg",
+            "alt": "Alternate"
+        }
+    ],
+    "link": {
+        "href": "http://www.lumiart.cz",
+        "text": "visit www.client.com"
+    },
+    "share_content": "<b>Bold</b>"
+}
