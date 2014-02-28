@@ -40,7 +40,7 @@ function program6(depth0,data) {
   
   var buffer = "", stack1;
   buffer += "\r\n	<div class=\"center_inside client_link\"><a class=\"button\" href=\""
-    + escapeExpression(((stack1 = ((stack1 = depth0.link),stack1 == null || stack1 === false ? stack1 : stack1.src)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
+    + escapeExpression(((stack1 = ((stack1 = depth0.link),stack1 == null || stack1 === false ? stack1 : stack1.href)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
     + "\">"
     + escapeExpression(((stack1 = ((stack1 = depth0.link),stack1 == null || stack1 === false ? stack1 : stack1.text)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
     + "<div class=\"left_glow\"></div><div class=\"right_glow\"></div></a></div>\r\n";

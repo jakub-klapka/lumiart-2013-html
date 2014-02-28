@@ -26,8 +26,10 @@ CODE IMAGE SIZES (for different devices): (based on ratio without rounding)
 			Desktop: 456x288
 			Tablet: 608x384
 			Mobile: 722x456
+			Mobile-half: 418x264
 		Thumbnail logos:
             mobile: 104h (max. 417w)
+            mobile-half: 62h (max. 248w)
             tablet: 44h (max. 176w)
             desktop: 68h (max. 272w)
 	Projetcts:
@@ -36,30 +38,37 @@ CODE IMAGE SIZES (for different devices): (based on ratio without rounding)
 			Desktop: 475x300
 			Tablet: 608x384
 			Mobile: 722x456
+			Mobile-half: 418x264
 	Team:
 		Person images:
 			Desktop: 703x444
 			Tablet: 456x288
 			Mobile: 722x456
+			Mobile-half: 418x264
 	Home:
 		Heading image:
 			Desktop: 456x288
 			Tablet: 475x300
 			Mobile: 722x456
+			Mobile-half: 418x264
 		Testimonials (19:8 ratio):
 			Desktop: 475x200
             Tablet: 475x200
             Mobile: 722x304
+            Mobile-half: 418x176
 
 
 BASE READINGS (widths):
+	Mobile half = 480px viewport
 	Portfolio:
 		images:
 			desktop - 442px
 			tablet - 607px
 			mobile - 707px
+			mobile-half: 405
 		thumbnail logos:
 			mobile: 104h (max. 417w)
+			mobile-half: 62h (max. 248w)
 			tablet: 44h (max. 176w)
 			desktop: 68h (max. 272w)
 	Projects:
@@ -67,16 +76,20 @@ BASE READINGS (widths):
 			desktop - 461px
 			tablet - 607px
 			mobile - 707px
+			mobile-half: 405
 	Team:
 		desktop: 691px
 		tablet: 453px
 		mobile: 707px
+		mobile-half: 405
 	Home:
 		Heading image:
 			desktop: 444
 			tablet: 465
 			mobile: 707
+			mobile-half: 405
 		testimonials (19:8 ratio):
 			desktop: 461
 			tablet: 468
 			mobile: 707
+			mobile-half: 405

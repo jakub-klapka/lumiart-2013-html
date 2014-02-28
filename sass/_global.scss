@@ -64,14 +64,21 @@ $lumi_box_top_bottom_gutter: 60px;
 			display: inline-block;
 		}
 
-		.prev,
-		.next {
+		%prev_next_buttons {
 			font-size: 30px;
 			line-height: 30px;
 			padding: 5px 15px;
 			height: 40px;
-			margin-left: 20px;
+		}
+
+		.prev {
+			@extend %prev_next_buttons;
 			margin-right: 20px;
+		}
+
+		.next {
+			@extend %prev_next_buttons;
+			margin-left: 20px;
 		}
 
 		.page {

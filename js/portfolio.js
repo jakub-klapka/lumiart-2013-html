@@ -147,12 +147,6 @@
 			this.template_file = this.client_content.data('hb-template-name');
 			this.list = $('.portfolio_list');
 
-			//append to link for better cache control
-			this.list.find('a').each(function() {
-				var anchor = $(this);
-				anchor.attr( 'href', anchor.attr('href') + '?json' );
-			});
-
 			this.bindEvents();
 			this.checkForHash();
 		},
@@ -201,7 +195,7 @@
 			this.showHidePreloader( 'show', element );
 			var xhr = $.ajax({
 				dataType: 'json',
-				url: href
+				url: href + '?json'
 			});
 			var self = this;
 			xhr.done(function(data){
