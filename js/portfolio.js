@@ -195,7 +195,7 @@
 			this.showHidePreloader( 'show', element );
 			var xhr = $.ajax({
 				dataType: 'json',
-				url: href + '?json'
+				url: href + 'json/'
 			});
 			var self = this;
 			xhr.done(function(data){
