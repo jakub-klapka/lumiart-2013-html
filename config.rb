@@ -25,14 +25,14 @@ line_comments = false
 # and then run:
 # sass-convert -R --from scss --to sass sass scss && rm -rf sass && mv scss sass
 
-require 'autoprefixer-rails'
-require 'csso'
+#require 'autoprefixer-rails'
+# 'csso'
 
-on_stylesheet_saved do |file|
-  css = File.read(file)
-  File.open(file, 'w') do |io|
+#on_stylesheet_saved do |file|
+#  css = File.read(file)
+#  File.open(file, 'w') do |io|
 #    io << Csso.optimize( AutoprefixerRails.compile(css) )
 #    io << AutoprefixerRails.compile(css, ["last 2 versions", "ie 8", "ie 9"])
-    io << Csso.optimize( AutoprefixerRails.compile(css, ["last 2 versions", "ie 8", "ie 9"]) )
-  end
-end
+#    io << Csso.optimize( AutoprefixerRails.compile(css, ["last 2 versions", "ie 8", "ie 9"]) )
+#  end
+#end
