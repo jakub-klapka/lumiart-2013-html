@@ -2,3 +2,6 @@
 .sass-cache
 css
 node_modules
+build
+js/projects_hb_template.js
+js/portfolio_hb_template.js
