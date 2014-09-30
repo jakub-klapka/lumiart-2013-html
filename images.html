@@ -6,13 +6,13 @@
 
 	<title>Lumiart</title>
 
-	<link rel="stylesheet" href="css/layout.css"/>
+	<link rel="stylesheet" href="build/css/layout.css"/>
 
 	<script type="text/javascript">
 		window.root_url = '';
 	</script>
 
-	<script type="text/javascript" src="js/modernizr.js"></script>
+	<script type="text/javascript" src="js/modernizr.min.js"></script>
 	<script type="text/javascript" src="js/picturefill.js"></script>
 	<script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
 	<script type="text/javascript" src="js/jquery.mobile.custom.min.js"></script>
@@ -94,20 +94,31 @@
 
 			<div class="clear"></div>
 			<h1>Picturefill test</h1>
+
 			<div class="image_corners ratio_19_12 large wp-image">
 				<div>
-					<span data-picture data-alt="Picturefill test">
-						<span data-src="http://placehold.it/190x120"></span>
-						<span data-src="http://placehold.it/19x12" data-media="(max-width: 768px)"></span>
-						<span data-src="http://placehold.it/1900x1200" data-media="(max-width: 768px) and (-webkit-min-device-pixel-ratio: 2),(min-resolution: 192dpi)"></span>
-						<span data-src="http://placehold.it/102x80" data-media="(min-width: 769px) and (max-width: 1024px)"></span>
-						<span data-src="http://placehold.it/1900x1200" data-media="(min-width: 769px) and (max-width: 1024px) and (-webkit-min-device-pixel-ratio: 2),(min-resolution: 192dpi)"></span>
-						<span data-src="http://placehold.it/1111x300" data-media="(min-width: 1025px)"></span>
-						<span data-src="http://placehold.it/1900x1200" data-media="(min-width: 1025px) and (-webkit-min-device-pixel-ratio: 2),(min-resolution: 192dpi)"></span>
-						<noscript>
-							<img src="http://placehold.it/190x120" alt="A giant stone face at The Bayon temple in Angkor Thom, Cambodia">
-						</noscript>
-				    </span>
+					<img src="http://placehold.it/19x12.jpg"
+					     srcset="http://placehold.it/19x12.jpg 19w,
+								http://placehold.it/102x80.jpg 102w,
+								http://placehold.it/350x120.jpg 350w,
+								http://placehold.it/900x300.jpg 900w,
+								http://placehold.it/1900x1200.jpg 1900w"
+					     sizes="(max-width: 767px) 100vw,
+					            (min-width: 1500px) 922px,
+					            60vw"
+					     alt="Test"/>
+					<!--<span data-picture data-alt="Picturefill test">-->
+						<!--<span data-src="http://placehold.it/190x120"></span>-->
+						<!--<span data-src="http://placehold.it/19x12" data-media="(max-width: 768px)"></span>-->
+						<!--<span data-src="http://placehold.it/1900x1200" data-media="(max-width: 768px) and (-webkit-min-device-pixel-ratio: 2),(min-resolution: 192dpi)"></span>-->
+						<!--<span data-src="http://placehold.it/102x80" data-media="(min-width: 769px) and (max-width: 1024px)"></span>-->
+						<!--<span data-src="http://placehold.it/1900x1200" data-media="(min-width: 769px) and (max-width: 1024px) and (-webkit-min-device-pixel-ratio: 2),(min-resolution: 192dpi)"></span>-->
+						<!--<span data-src="http://placehold.it/1111x300" data-media="(min-width: 1025px)"></span>-->
+						<!--<span data-src="http://placehold.it/1900x1200" data-media="(min-width: 1025px) and (-webkit-min-device-pixel-ratio: 2),(min-resolution: 192dpi)"></span>-->
+						<!--<noscript>-->
+							<!--<img src="http://placehold.it/190x120" alt="A giant stone face at The Bayon temple in Angkor Thom, Cambodia">-->
+						<!--</noscript>-->
+				    <!--</span>-->
 				</div>
 			</div>
 
