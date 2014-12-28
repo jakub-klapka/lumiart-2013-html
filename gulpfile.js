@@ -6,6 +6,7 @@ var gulp = require( 'gulp' ),
 	uglify = require( 'gulp-uglify' ),
 	rename = require( 'gulp-rename' ),
 	shell = require( 'gulp-shell' ),
+	critical = require( 'critical' ),
 	plumber = require( 'gulp-plumber' ),
 	merge_stream = require( 'merge-stream' );
 
@@ -91,6 +92,50 @@ gulp.task( 'js', ['handlebars_precompile'], function(){
 		.pipe( gulp.dest( 'build/js' ) );
 
 	return merge_stream( copy, f_uglify );
+
+} );
+
+gulp.task( 'critical', function(){
+	critical.generate({
+		base: '.',
+		src: 'home.html',
+		width: 1024,
+		height: 768,
+		dest: 'build/css/critical-home.css'
+	});
+	critical.generate({
+		base: '.',
+		src: 'contact.html',
+		width: 1024,
+		height: 768,
+		dest: 'build/css/critical-contact.css'
+	});
+	critical.generate({
+		base: '.',
+		src: 'layout.html',
+		//css: ['build/css/layout.css'],
+		width: 1024,
+		height: 768,
+		dest: 'build/css/critical-layout.css'
+	});
+	critical.generate({
+		base: '.',
+		src: 'portfolio.html',
+		//css: ['build/css/portfolio.css'],
+		width: 1024,
+		height: 768,
+		dest: 'build/css/critical-portfolio.css'
+	});
+	critical.generate({
+		base: '.',
+		src: 'team.html',
+		//css: ['build/css/team.css'],
+		width: 1024,
+		height: 768,
+		dest: 'build/css/critical-team.css'
+	});
+
+
 
 } );
 
