@@ -8,7 +8,10 @@ var gulp = require( 'gulp' ),
 	shell = require( 'gulp-shell' ),
 	critical = require( 'critical' ),
 	plumber = require( 'gulp-plumber' ),
-	merge_stream = require( 'merge-stream' );
+	gulp_filter = require( 'gulp-filter' ),
+	livereload = require( 'gulp-livereload' ),
+	merge_stream = require( 'merge-stream' ),
+	gulpsync = require('gulp-sync')(gulp);
 
 var sass_config = {
 	'style': 'compressed',
@@ -31,13 +34,17 @@ var plumber_config = {
 CSS
  */
 gulp.task( 'css', function(){
-
+	var filter = gulp_filter(['*', '!*.map']);
 	return gulp.src( 'sass/**/*.scss', { base: 'sass' } )
 		.pipe( plumber( plumber_config ) )
 		.pipe( sass( sass_config ) )
+		.pipe( filter )
 		.pipe( autoprefixer() )
 		.pipe( gulp.dest( 'build/css' ) );
 
+} );
+gulp.task( 'watch_css', function(){
+	gulp.watch( 'sass/**/*.scss', [ 'css' ] );
 } );
 
 /*
@@ -140,6 +147,18 @@ gulp.task( 'critical', function(){
 } );
 
 /*
+Livereload
+ */
+gulp.task( 'livereload', function(){
+	livereload.listen();
+	gulp.watch( [ 'build/**/*', '*.html', '*.json' ], function( evt ){
+		livereload.changed( evt.path );
+	} );
+} );
+
+
+/*
 Tasks
  */
-gulp.task( 'default', ['css', 'images', 'js', 'fonts'] );
+gulp.task( 'default', gulpsync.async( [ [ 'css', 'critical' ], 'images', 'js', 'fonts'] ) );
+gulp.task( 'dev', [ 'watch_css', 'livereload' ] );
